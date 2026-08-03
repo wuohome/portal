@@ -403,6 +403,10 @@ button{font-family:inherit}
     //    不在本 repo 另留一份副本（兩份會走鐘，人名別名表與管理層名單都在裡面）。
     const SYS_BASE = '/ragic/';
 
+    // 2026-08-03：新系統開始有住在別的網域的（場勘規劃書在 Vercel，因為要跑
+    // serverless function 存 Supabase）。href 若本身就是完整網址就不要再加前綴。
+    const cardHref = (h) => /^https?:\/\//.test(h) ? h : SYS_BASE + h;
+
     // ════════════════════════════════════════════════════════════════
     // 卡片與部門設定（殼只有一份，部門差異靠這個物件驅動）
     // 依 窩的家企業入口_規格書 § v1 卡片配置
@@ -456,7 +460,7 @@ button{font-family:inherit}
         title: '全公司共用', note: '',
         cards: [
           { title: '名片資料調查', desc: '名片印製資料填報', icon: '💳', href: 'bcard-survey.html', tone: 'amber' },
-          { title: '場勘規劃書', desc: '裝修／修繕場勘，產出簡報', icon: '📐', href: 'tools/survey-planner/', tone: 'ink' },
+          { title: '場勘規劃書', desc: '裝修／修繕場勘，產出簡報', icon: '📐', href: 'https://wuohome-survey-planner.vercel.app/', tone: 'ink' },
         ],
       },
     ];
@@ -547,7 +551,7 @@ button{font-family:inherit}
     const quote = QUOTES[doy % QUOTES.length];
 
     const catHtml = (c) => `
-      <a class="cat" href="${SYS_BASE}${c.href}" data-q="${(c.title + ' ' + c.desc).toLowerCase()}">
+      <a class="cat" href="${cardHref(c.href)}" data-q="${(c.title + ' ' + c.desc).toLowerCase()}">
         <div class="ic" style="background:${TONE_BG[c.tone] || TONE_BG.ink}">${c.icon}</div>
         <div><b>${c.title}</b><span>${c.desc}</span></div>
       </a>`;
