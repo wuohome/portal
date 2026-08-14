@@ -429,6 +429,13 @@ button{font-family:inherit}
           { title: '業績儀表板',    desc: '個人與全店業績',         icon: '📊', href: 'staff-dashboard.html', tone: 'ink' },
           { title: '排班表',        desc: '看班表、排班',           icon: '📅', href: 'schedule.html',        tone: 'coral' },
           { title: '拋轉 591',      desc: '產生 591 刊登包',        icon: '🔁', href: 'toss591.html',         tone: 'ink' },
+          // 2026-08-11 補收：以下 6 張都是實際在跑但入口一直沒收的（Joan「工具做太多，都沒上入口，我都找不到」）
+          { title: '智慧找房地圖',  desc: '地圖找物件',             icon: '🗺️', href: 'https://wuohome.github.io/ragic-map/map.html', tone: 'ink' },
+          { title: '591 廣告管家',  desc: '591 刊登成效儀表板',     icon: '📈', href: '591-dashboard.html',   tone: 'ink' },
+          { title: '定金收據後台',  desc: '定金收據管理',           icon: '🗃️', href: 'earnest-admin.html',   tone: 'amber' },
+          { title: '排班表（唯讀）', desc: '只看不改，可發給同仁',   icon: '👀', href: 'schedule-view.html',   tone: 'coral' },
+          { title: '租屋需求小幫手', desc: '發給租客填需求',         icon: '📮', href: 'from.html',            tone: 'coral' },
+          { title: '定金退款確認',  desc: '發給客人確認退款',       icon: '↩️', href: 'refund.html',          tone: 'amber' },
         ],
       },
       {
@@ -439,13 +446,17 @@ button{font-family:inherit}
           { title: '工務報修',         desc: '建立報修單',       icon: '🧰', href: 'repair-request.html',       tone: 'coral' },
           { title: '修繕報價單產生器', desc: '產生客戶報價單',   icon: '🧮', href: 'repair-quote-builder.html', tone: 'amber' },
           { title: '工作日誌',         desc: '每日工地進度回報', icon: '📓', href: 'worklog.html',              tone: 'ink' },
+          // 2026-08-11 補收：這兩張是同仁要發給房客／協力廠商的對外連結
+          { title: '房客自助報修',     desc: '發給房客填報修',   icon: '🔧', href: 'repair.html',               tone: 'coral' },
+          { title: '協力人員請款',     desc: '發給協力廠商請款', icon: '🧾', href: 'service-fee.html',          tone: 'amber' },
         ],
       },
       {
         key: '設計部', id: 'g-design', icon: '🎨',
         title: '設計部', note: '工程平台入口',
         cards: [
-          { title: '設計部工作檯', desc: '案件、甘特圖、待辦', icon: '🎨', href: 'decor-console.html', tone: 'ink' },
+          // 2026-08-05 整套搬到 Vercel，/ragic/decor-console.html 只剩跳轉殼（留給同仁舊書籤），入口直連真正的家
+          { title: '設計部工作檯', desc: '案件、甘特圖、待辦', icon: '🎨', href: 'https://wuohome-decor-api.vercel.app/', tone: 'ink' },
         ],
       },
       {
@@ -453,6 +464,9 @@ button{font-family:inherit}
         title: '管理 / 人資', note: '行政與人事',
         cards: [
           { title: '新進人員資料表', desc: '新人到職資料填寫', icon: '👤', href: 'hr-onboarding.html', tone: 'ink' },
+          // 2026-08-11 補收
+          { title: '零用金審核',     desc: '財務端審核與撥款',  icon: '💴', href: 'https://wuohome-petty-cash.vercel.app/finance', tone: 'amber' },
+          { title: '公平帳儀表板',   desc: '帳務分攤檢視',      icon: '⚖️', href: 'fairness-dashboard.html', tone: 'ink' },
         ],
       },
       {
@@ -461,13 +475,23 @@ button{font-family:inherit}
         cards: [
           { title: '名片資料調查', desc: '名片印製資料填報', icon: '💳', href: 'bcard-survey.html', tone: 'amber' },
           { title: '場勘規劃書', desc: '裝修／修繕場勘，產出簡報', icon: '📐', href: 'https://wuohome-survey-planner.vercel.app/', tone: 'ink' },
+          // 2026-08-11 補收。零用金請款 2026-08-03 就上線 Vercel、08-10 才把網址發給同仁，
+          // 但入口這段時間一直把它畫成灰色「規劃中」——已從 PLANNED 移過來
+          { title: '零用金請款',   desc: '小額代墊申請',        icon: '💰', href: 'https://wuohome-petty-cash.vercel.app/', tone: 'coral' },
+          { title: '業務綁定',     desc: '新人到職綁定業務身分', icon: '🔗', href: 'bind.html',            tone: 'ink' },
+          { title: '360 環景產生器', desc: '走一遍，產出環景連結', icon: '🌐', href: 'pano-maker.html',      tone: 'ink' },
+          { title: '信封列印',     desc: '列印公司信封',        icon: '✉️', href: 'https://wuohome.github.io/envelope-printer/', tone: 'amber' },
+          { title: '房東稅務 2026', desc: '租金所得稅試算',      icon: '🧾', href: '2026LandlordTax.html', tone: 'amber' },
+          { title: '親屬關係 2026', desc: '親等關係查詢',        icon: '👪', href: 'family2026.html',      tone: 'ink' },
+          { title: '系統文件站',   desc: '各系統操作說明',      icon: '📚', href: 'https://wuohome.github.io/ragic-system-docs/', tone: 'ink' },
         ],
       },
     ];
 
-    // 未上線的六套：灰色「規劃中」卡位（前端標準既定做法，讓平台全貌可見）
+    // 未上線：灰色「規劃中」卡位（前端標準既定做法，讓平台全貌可見）
+    // 2026-08-11：零用金請款已上線並移進共用組；業務開發 CRM 目前仍是 DEMO=true 假資料
+    //             （crm-data.js L15），且 Google OAuth 未授權該網域，維持規劃中
     const PLANNED = [
-      { title: '零用金請款',     desc: '規劃中' },
       { title: '材料成本資料庫', desc: '規劃中' },
       { title: '供應商地圖',     desc: '規劃中' },
       { title: '案件儀表板',     desc: '規劃中' },
